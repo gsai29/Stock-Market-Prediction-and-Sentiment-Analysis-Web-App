@@ -1,0 +1,32 @@
+.dashboard {
+    color: #fff;
+    background-color: #282c34;
+    padding: 20px;
+    border-radius: 5px;
+    margin: 20px;
+  }
+  
+  .dashboard div {
+    margin-bottom: 20px;
+  }
+  
+  .stock-info, .predictions, .sentiment-analysis, .graphs, .articles {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  h1, h2 {
+    color: #61dafb;
+  }
+  
+  p, li {
+    color: #ccc;
+  }
+  
+  .graphs img {
+    width: 100%;
+    max-width: 300px;
+    margin: 10px;
+  }
+  

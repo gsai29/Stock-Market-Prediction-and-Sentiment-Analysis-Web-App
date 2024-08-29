@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/static/css/main.fe230446.css",
+    "main.js": "/static/js/main.5ca78d49.js",
+    "static/js/453.ad6eb26e.chunk.js": "/static/js/453.ad6eb26e.chunk.js",
+    "static/media/stock_market_image.png": "/static/media/stock_market_image.7a5f58eb4e0f6d62d5e9.png",
+    "index.html": "/index.html",
+    "main.fe230446.css.map": "/static/css/main.fe230446.css.map",
+    "main.5ca78d49.js.map": "/static/js/main.5ca78d49.js.map",
+    "453.ad6eb26e.chunk.js.map": "/static/js/453.ad6eb26e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fe230446.css",
+    "static/js/main.5ca78d49.js"
+  ]
+}
