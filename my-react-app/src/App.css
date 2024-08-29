@@ -1,55 +1,3 @@
-/* .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-  
-
-{
-  background-image: url('../../stock_market_image.png'); /* Add your background image URL here */
-  /* background-size: cover;
-  background-position: center;
-  width: 100%;
-  padding: 20px;
-  color: #fff;
-} */
-
-/* 
-*/
-
 .App {
   text-align: center;
   background-color: #282c34;
@@ -112,3 +60,14 @@ button {
   border-radius: 5px;
   margin-top: 10px; /* Space above the button */
 }
+
+
+.app-title {
+  font-size: 24px; /* Larger font size */
+  font-weight: bold; /* Make it bold */
+  color: #fff; /* White color for visibility */
+  margin-top: 20px; /* Add some space at the top */
+  padding: 10px; /* Padding for better layout */
+  text-align: center; /* Center the text */
+}
+
