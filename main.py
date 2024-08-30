@@ -16,15 +16,15 @@ from bson.objectid import ObjectId
 
 # Importing  modules
 from algorithms.arima import ARIMA_ALGO
-from algorithms.lstm import LSTM_ALGO
+# from algorithms.lstm import LSTM_ALGO
 from algorithms.linear_regression import LIN_REG_ALGO
 from algorithms.sentiment_analysis import retrieve_news_polarity
 from utils.get_data import get_historical
-from utils.load_config import load_config
+# from utils.load_config import load_config
 from utils.mongodb_functions import check_email
 from utils.mongodb_functions import update_document
 from utils.mongodb_functions import create_document
-
+from dotenv import load_dotenv
 # Ignore Warnings
 import warnings
 warnings.filterwarnings("ignore")
@@ -32,13 +32,13 @@ warnings.filterwarnings("ignore")
 app = Flask(__name__, static_folder='my-react-app/build', static_url_path='')
 CORS(app) 
 
-config = load_config()
-news_api_key = config['news_api']['api_key']
+load_dotenv()
+news_api_key = os.getenv('NEWS_API_KEY')
 
 #mongodb credentials
-mongo_uri = config['mongodb']['uri']
-database = config['mongodb']['database']
-collection = config['mongodb']['collection']
+mongo_uri = os.getenv('MONGO_URI')
+database = os.getenv('MONGO_DATABASE')
+collection = os.getenv('MONGO_COLLECTION')
 
 
 @app.route('/')
@@ -153,7 +153,7 @@ def insertintotable():
 
         # Running algorithms
         arima_pred, error_arima = ARIMA_ALGO(df,quote)
-        lstm_pred, error_lstm = LSTM_ALGO(df,quote)
+        # lstm_pred, error_lstm = LSTM_ALGO(df,quote)
         df, lr_pred, forecast_set, mean, error_lr = LIN_REG_ALGO(df,quote)
         polarity, article_list, pos, neg, neutral = retrieve_news_polarity(quote, company,news_api_key)
         # print("articles list",article_list)
@@ -180,13 +180,13 @@ def insertintotable():
             "today_stock": df.iloc[-1].to_dict(),
             "predictions": {
                 "arima": arima_pred,
-                "lstm": lstm_pred,
+                # "lstm": lstm_pred,
                 "linear_regression": lr_pred
             },
             "forecast": forecast_set,
             "errors": {
                 "arima_rmse": error_arima,
-                "lstm_rmse": error_lstm,
+                # "lstm_rmse": error_lstm,
                 "lr_rmse": error_lr
             },
             "sentiment_analysis": {
@@ -198,7 +198,7 @@ def insertintotable():
             "articles_titles": titles,
             "graph_images": {
                 "arima": url_for('static', filename='graphs/ARIMA.png'),
-                "lstm": url_for('static', filename='graphs/LSTM.png'),
+                # "lstm": url_for('static', filename='graphs/LSTM.png'),
                 "linear_regression": url_for('static', filename='graphs/LR.png'),
                 "trends": url_for('static', filename='graphs/Trends.png'),                
                 "sentiment_analysis": url_for('static', filename='graphs/SA.png')

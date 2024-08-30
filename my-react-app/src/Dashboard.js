@@ -33,11 +33,11 @@ function Dashboard({ data }) {
           <p>Today's prediction from Linear Regression: {data.predictions.linear_regression}</p>
           <img src={data.graph_images.linear_regression} alt="Linear Regression Graph" />
         </div>
-        <div className="model">
+        {/* <div className="model">
           <h3>LSTM Model</h3>
           <p>Today's prediction from LSTM: {data.predictions.lstm}</p>
           <img src={data.graph_images.lstm} alt="LSTM Prediction Graph" />
-        </div>
+        </div> */}
       </div>
 
       <div className="sentiment-analysis">
