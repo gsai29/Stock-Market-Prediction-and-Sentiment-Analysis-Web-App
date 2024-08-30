@@ -33,5 +33,6 @@ jobs:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
 
     - name: Deploy to Azure
+      timeout-minutes: 60
       run: |
         az webapp up --name stock-market-prediction --resource-group stock-market-prediction --location "East US" --sku B1 --os-type Linux --runtime "PYTHON|3.9"
