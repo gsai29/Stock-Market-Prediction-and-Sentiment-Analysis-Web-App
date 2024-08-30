@@ -20,11 +20,11 @@ from algorithms.lstm import LSTM_ALGO
 from algorithms.linear_regression import LIN_REG_ALGO
 from algorithms.sentiment_analysis import retrieve_news_polarity
 from utils.get_data import get_historical
-from utils.load_config import load_config
+# from utils.load_config import load_config
 from utils.mongodb_functions import check_email
 from utils.mongodb_functions import update_document
 from utils.mongodb_functions import create_document
-
+from dotenv import load_dotenv
 # Ignore Warnings
 import warnings
 warnings.filterwarnings("ignore")
@@ -32,13 +32,13 @@ warnings.filterwarnings("ignore")
 app = Flask(__name__, static_folder='my-react-app/build', static_url_path='')
 CORS(app) 
 
-config = load_config()
-news_api_key = config['news_api']['api_key']
+load_dotenv()
+news_api_key = os.getenv('NEWS_API_KEY')
 
 #mongodb credentials
-mongo_uri = config['mongodb']['uri']
-database = config['mongodb']['database']
-collection = config['mongodb']['collection']
+mongo_uri = os.getenv('MONGO_URI')
+database = os.getenv('MONGO_DATABASE')
+collection = os.getenv('MONGO_COLLECTION')
 
 
 @app.route('/')
