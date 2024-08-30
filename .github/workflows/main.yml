@@ -17,7 +17,13 @@ jobs:
       with:
         python-version: '3.9'
 
+    - name: Set up virtual environment
+      run: |
+        python -m venv venv
+        source venv/bin/activate
+
     - name: Install dependencies
+      timeout-minutes: 120
       run: |
         pip install -r requirements.txt
 
@@ -33,6 +39,7 @@ jobs:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
 
     - name: Deploy to Azure
-      timeout-minutes: 60
+      timeout-minutes: 120
       run: |
         az webapp up --name stock-market-prediction --resource-group stock-market-prediction --location "East US" --sku B1 --os-type Linux --runtime "PYTHON|3.9"
+
