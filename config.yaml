@@ -1,8 +1,0 @@
-mongodb:
-  uri: "mongodb+srv://shrishailyachavan:36nLKPpPk6eiIRts@cluster0.rwkwv.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
-  database: "StockMarketSentimentAnalysis"
-  collection: "login_details" 
-
-news_api:
-  api_key: "d5ae053555d44dcdad45ab7e4e13d77f"
-  
