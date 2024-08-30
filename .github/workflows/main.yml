@@ -27,13 +27,11 @@ jobs:
         npm install
         npm run build
 
-    - name: Zip the application
-      run: zip -r deploy.zip . -x "*.git*"
+    - name: Login to Azure
+      uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
 
     - name: Deploy to Azure
-      uses: azure/webapps-deploy@v2
-      with:
-        app-name: 'stock-market-prediction'
-        slot-name: 'production'
-        publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
-        package: './deploy.zip'
+      run: |
+        az webapp up --name stock-market-prediction --resource-group stock-market-prediction --location East US --sku F1 --os-type Linux --runtime "PYTHON|3.9"
