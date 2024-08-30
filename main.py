@@ -4,7 +4,6 @@ from flask import Flask, jsonify, request, render_template, send_from_directory,
 from flask_cors import CORS 
 import pandas as pd
 import os
-import yaml
 from datetime import datetime
 import datetime as dt
 import yfinance as yf
