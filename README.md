@@ -70,7 +70,7 @@ The application serves as a tool for investors and financial analysts to gauge m
     Run the Flask application which also serves the React frontend:
 
    ```bash
-    python main.py
+    python application.py
     ```
     
 ## Live Link
