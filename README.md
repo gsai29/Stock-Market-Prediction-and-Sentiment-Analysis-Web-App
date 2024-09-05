@@ -1,4 +1,4 @@
-# Stock Market Prediction and Sentiment Analysis Web App
+# Stock Market Prediction and Sentiment Analysis Web App.
 
 This repository contains a full-stack application designed to predict stock market trends and analyze sentiment from financial news. It integrates various technologies including Flask, React, MongoDB, and machine learning algorithms.
 
